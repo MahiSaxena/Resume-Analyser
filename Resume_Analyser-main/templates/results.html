@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Skill Match</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='design.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <!-- Add favicon -->
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">Skill Match</h1>
+        </div>
+    </header>
+    <main class="container">
+        <section class="results-intro">
+            <p>Here are your results based on your resume and the job description.</p>
+            <p class="match-percentage">Match Percentage: <span>{{ match_percentage }}%</span></p>
+        </section>
+
+        <section class="skills-analysis">
+            <div class="skill-category">
+                <h2>Resume Skills</h2>
+                <ul class="skills-list">
+                    {% for skill in resume_skills %}
+                    <li class="skill-item">{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h2>Job Skills</h2>
+                <ul class="skills-list">
+                    {% for skill in job_skills %}
+                    <li class="skill-item">{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <section class="suggestions">
+            <div class="suggestion-category">
+                <h2>Additional Skills Suggestions</h2>
+                <p class="suggestion-text">{{ additional_skills }}</p>
+            </div>
+
+            <!-- <div class="suggestion-category">
+                <h2>Skills to Remove</h2>
+                <p class="suggestion-text">{{ additional_remskills }}</p>
+            </div> -->
+        </section>
+
+        <!-- <section class="visualization">
+            <h2>Skill Match Overview</h2>
+            <div class="chart-container">
+                <img src="data:image/png;base64,{{ plot_image | safe }}" alt="Skill Match Overview Visualization">
+            </div>
+        </section> -->
+    </main>
+    <footer class="site-footer">
+        <p>© 2023 Skill Match. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

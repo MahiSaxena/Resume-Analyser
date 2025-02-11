@@ -1,0 +1,240 @@
+/* General Styles */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    /* Lighter background */
+    margin: 0;
+    padding: 0;
+    color: #495057;
+    /* Softened text color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure body takes full viewport height */
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Softer shadow */
+    transition: all 0.3s ease;
+    /* Smooth transitions for interactions */
+}
+
+.container:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    /* Enhanced shadow on hover */
+}
+
+
+/* Header */
+
+.site-header {
+    background-color: #343a40;
+    /* Darker background for contrast */
+    color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.site-title {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+
+/* Main Content Area */
+
+main {
+    flex-grow: 1;
+    /* Allow main to take up available space */
+}
+
+
+/* Sections */
+
+section {
+    margin-bottom: 40px;
+    opacity: 0;
+    /* Start with hidden sections for animation */
+    animation: fadeInUp 0.8s ease-out forwards;
+    /* Fade in animation */
+}
+
+
+/* Section Animation Delay */
+
+section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+section:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+section:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Results Intro */
+
+.results-intro {
+    text-align: center;
+}
+
+.match-percentage {
+    margin-top: 20px;
+    font-size: 1.4em;
+}
+
+.match-percentage span {
+    color: #38b000;
+    /* Green for match percentage */
+    font-weight: bold;
+}
+
+
+/* Skills Analysis */
+
+.skills-analysis {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-category {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-item {
+    background-color: #e2e6ea;
+    /* Light gray background */
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Add transitions */
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    /* Lift the item up on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Suggestions */
+
+.suggestion-category {
+    margin-bottom: 30px;
+}
+
+.suggestion-text {
+    font-size: 1.1em;
+    line-height: 1.7;
+    background-color: #f1f3f5;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+
+/* Visualization */
+
+.visualization {
+    text-align: center;
+}
+
+.chart-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 12px;
+}
+
+.chart-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* Headings */
+
+h1,
+h2 {
+    font-weight: 600;
+    /* Slightly bolder headings */
+}
+
+h1 {
+    text-align: center;
+    color: #38b000;
+    /* Harmonized color */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    /* Increased size */
+}
+
+h2 {
+    color: #495057;
+    border-bottom: 3px solid #38b000;
+    /* More prominent underline */
+    padding-bottom: 15px;
+    margin-top: 30px;
+    font-size: 1.8em;
+    /* Increased size */
+}
+
+
+/* Footer */
+
+.site-footer {
+    background-color: #e9ecef;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    /* Push footer to the bottom */
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    .skills-analysis {
+        flex-direction: column;
+    }
+    .skill-category {
+        margin: 0 0 20px 0;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+}
